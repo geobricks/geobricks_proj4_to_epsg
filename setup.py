@@ -2,20 +2,19 @@ from setuptools import setup
 from setuptools import find_packages
 
 setup(
-    name='GeobricksCommon',
+    name='GeobricksProj4ToEPSG',
     version='0.0.6',
     author='Simone Murzilli; Guido Barbaglia',
     author_email='geobrickspy@gmail.com',
     packages=find_packages(),
     license='LICENSE.txt',
     long_description=open('README.md').read(),
-    description='Geobricks common library.',
+    description='Geobricks Proj4 to EPSG code convert library',
     install_requires=[
         'watchdog',
         'flask',
-        'flask-cors',
-        'requests'
+        'flask-cors'
     ],
-    url='http://pypi.python.org/pypi/GeobricksCommon/',
-    keywords=['geobricks']
+    url='http://pypi.python.org/pypi/GeobricksProj4ToEPSG/',
+    keywords=['geobricks', 'proj4', 'epsg', 'gis', 'geo']
 )

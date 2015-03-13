@@ -1,6 +1,4 @@
-/dist/
 *.iml
 *.*~
-/GeobricksSpatialQuery.egg-info/
-/GeobricksCommon.egg-info/
-/build/
+/GeobricksProj4ToEPSG.egg-info/
+
