@@ -14,7 +14,7 @@ setup(
         'watchdog',
         'flask',
         'flask-cors',
-        'argh' #it ttrows an error with python2.6 installed on redha
+        'argh' #it trhows an error with python2.6 installed on redhat
     ],
     entry_points={
         'console_scripts': [
