@@ -2,10 +2,9 @@ import requests
 import json
 from geobricks_proj4_to_epsg.core.proj4_to_epsg import get_proj4_json_from_string
 
+# dirty methods to get epsg/proj4 codes
 epsg_json = []
-
 cached_epsg_codes = []
-
 
 def create_epsg_json_file():
     with open("../data/epsg.json", "r") as f:
@@ -22,6 +21,7 @@ def create_epsg_json_file():
     print "----"
     # print epsg_json
     write_json_file(epsg_json)
+
 
 def get_proj4_from_spatialreference(epsg):
     r = requests.get("http://spatialreference.org/ref/epsg/"+ str(epsg) +"/proj4/")
@@ -43,6 +43,7 @@ def write_json_file(json_data):
         print json_data
         json.dump(json_data, outfile)
 
+
 # this method clean the json produced from create_epsg_json_file(). There are no valid data
 # return from the web service
 def _clean_epsg_json_data():
@@ -53,8 +54,6 @@ def _clean_epsg_json_data():
             if p is not None and "proj" in p["proj4"]:
                 epsg_json_data.append(p)
     write_json_file(epsg_json_data)
-
-
 
 
 # spatialref doesn't have 3857 and 900913...
@@ -68,10 +67,8 @@ def _add_google_mercator_epsg_codes():
     write_json_file(projection_list)
 
 
-
+# methods to run
 #create_epsg_json_file()
-
 #_clean_epsg_json_data()
-
-_add_google_mercator_epsg_codes()
+#_add_google_mercator_epsg_codes()
 # print get_proj4_from_spatialreference(3857)
