@@ -7,20 +7,23 @@ import logging
 # Initialize the Flask app
 app = Flask(__name__)
 
-# Initialize CORS filters
-cors = CORS(app, resources={r'/*': {'origins': '*'}})
+def start():
 
-# Url blueprint prefix
-url_prefix = "/geoconvert"
+    # Initialize CORS filters
+    cors = CORS(app, resources={r'/*': {'origins': '*'}})
 
-# Core services.
-app.register_blueprint(rest.app, url_prefix=url_prefix)
+    # Url blueprint prefix
+    url_prefix = "/geoconvert"
 
-# Logging level.
-# log = logging.getLogger('werkzeug')
-# log.setLevel(logging.INFO)
+    # Core services.
+    app.register_blueprint(rest.app, url_prefix=url_prefix)
+
+    # Logging level.
+    # log = logging.getLogger('werkzeug')
+    # log.setLevel(logging.INFO)
+    app.run(host=config['settings']['host'], port=config['settings']['port'], debug=config['settings']['debug'], threaded=True)
 
 
 # Start Flask server
 if __name__ == '__main__':
-    app.run(host=config['settings']['host'], port=config['settings']['port'], debug=config['settings']['debug'], threaded=True)
+    start()

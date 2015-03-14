@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='GeobricksProj4ToEPSG',
-    version='0.0.12',
+    version='0.0.14',
     author='Simone Murzilli; Guido Barbaglia',
     author_email='geobrickspy@gmail.com',
     packages=find_packages(),

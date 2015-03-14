@@ -2,6 +2,8 @@ import requests
 import json
 from geobricks_proj4_to_epsg.core.proj4_to_epsg import get_proj4_json_from_string
 
+# TODO: @Deprecated
+
 # dirty methods to get epsg/proj4 codes
 epsg_json = []
 cached_epsg_codes = []
