@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='GeobricksProj4ToEPSG',
-    version='0.0.9',
+    version='0.0.12',
     author='Simone Murzilli; Guido Barbaglia',
     author_email='geobrickspy@gmail.com',
     packages=find_packages(),
@@ -13,8 +13,14 @@ setup(
     install_requires=[
         'watchdog',
         'flask',
-        'flask-cors'
+        'flask-cors',
+        'argh' #it ttrows an error with python2.6 installed on redha
     ],
+    entry_points={
+        'console_scripts': [
+            'proj4epsg = geobricks_proj4_to_epsg.cli.cli:main',
+        ]
+    },
     url='http://pypi.python.org/pypi/GeobricksProj4ToEPSG/',
     keywords=['geobricks', 'proj4', 'epsg', 'gis', 'geo'],
     package_data={"": ["geobciks_proj4_to_epsg/data/*"]},
