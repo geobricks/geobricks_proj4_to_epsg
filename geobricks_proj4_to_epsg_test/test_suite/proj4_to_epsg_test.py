@@ -27,6 +27,19 @@ class GeobricksTest(unittest.TestCase):
         epsg = get_epsg_code_from_proj4_json({u'lon_0': u'0', u'datum': u'WGS84', u'y_0': u'0', u'no_defs': True, u'proj': u'cea', u'x_0': u'0', u'units': u'm', u'lat_ts': u'30'})
         self.assertEqual('3975', str(epsg))
 
+    # def test_new_test(self):
+    #     epsg = get_epsg_code_from_proj4('+datum=WGS84 +k=1 +lon_0=0 +no_defs +proj=merc +units=m +x_0=0 +y_0=0')
+    #     print epsg
+    #     self.assertEqual(str(epsg), '3857')
+    # def test_new_test2(self):
+    #     result = get_proj4_json_from_epsg_code(3857)
+    #     print result
+    #     self.assertEqual(str(result), '3975')
+
+    def test_get_proj4_json_from_epsg_code_3957(self):
+        epsg = get_epsg_code_from_proj4('+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs')
+        self.assertEqual(str(epsg), '3975')
+
 def run_test():
     suite = unittest.TestLoader().loadTestsFromTestCase(GeobricksTest)
     unittest.TextTestRunner(verbosity=2).run(suite)
