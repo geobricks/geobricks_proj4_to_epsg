@@ -40,6 +40,7 @@ class GeobricksTest(unittest.TestCase):
         epsg = get_epsg_code_from_proj4('+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs')
         self.assertEqual(str(epsg), '3975')
 
+
 def run_test():
     suite = unittest.TestLoader().loadTestsFromTestCase(GeobricksTest)
     unittest.TextTestRunner(verbosity=2).run(suite)
