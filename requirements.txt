@@ -1,4 +1,4 @@
 watchdog
 flask
 flask-cors
-argh
+argh #it trhows an error with python2.6 installed on redhat
