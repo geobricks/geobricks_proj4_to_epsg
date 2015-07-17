@@ -11,10 +11,10 @@ setup(
     long_description=open('README.md').read(),
     description='Geobricks Proj4 to EPSG code convert library',
     install_requires=[
-        'watchdog',
-        'flask',
-        'flask-cors',
-        'argh' #it trhows an error with python2.6 installed on redhat
+        # 'watchdog',
+        # 'flask',
+        # 'flask-cors',
+        # 'argh' #it trhows an error with python2.6 installed on redhat
     ],
     entry_points={
         'console_scripts': [
