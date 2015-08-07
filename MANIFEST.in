@@ -1,5 +1,6 @@
 include *.md *.txt *.json
 recursive-include geobricks_proj4_to_epsg *
-recursive-exlude geobricks_proj4_to_epsg_test *
+recursive-exclude tests *
+recursive-exclude examples *
 global-exclude *_dev.py
 global-exclude .gitignore
